@@ -17,7 +17,7 @@ OBJECTIVES:
 LIST OF EXPERIMENTS
 
 * Create a web page with the following using HTML a. To embed a map in a web page b. To fix the hot spots in that map c. Show all the related information when the hot spots are clicked.
-* Create a web page with the following. a. Cascading style sheets. b. Embedded style sheets. c. Inline style sheets. Use our college information for the web pages.
+* Create a web page with the following. a. Cascading style sheets. b. Embedded style sheets. c. Inline style sheets.
 * Validate the Registration, user login, user profile and payment by credit card pages using JavaScript.
 * Write programs in Java using Servlets: i. To invoke servlets from HTML forms ii. Session tracking using hidden form fields and Session tracking for a hit count
 * Write programs in Java to create three-tier applications using servlets for conducting on-line examination for displaying student mark list. Assume that student information is available in a database which has been stored in a database server.
