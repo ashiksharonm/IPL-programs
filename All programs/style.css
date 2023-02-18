@@ -1,0 +1,16 @@
+h1 {
+    color: darkslategrey;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: chocolate;
+}
+
+.special {
+    font-size: 20pt;
+    background-color: lightsteelblue;
+}
