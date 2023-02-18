@@ -1,8 +1,7 @@
 # IPL-programs
 
-CS8661                         INTERNET PROGRAMMING LABORATORY                   L T P C
+CS8661                         INTERNET PROGRAMMING LABORATORY                   
                                                                                  
-                                                                                 0 0 4 2
 
 
 OBJECTIVES:
