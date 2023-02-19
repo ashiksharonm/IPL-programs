@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>CAR REGISTRATION FORM</title>
+        <style>
+            body{
+                font-size: 14pt;
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(184,11,195,1) 0%, rgba(0,212,255,1) 100%);
+            }
+            input[type="submit"]:hover {
+                background-color: rgb(101, 226, 254);
+                color: black;
+                transform: scale(1.1);
+            }
+        </style>
+
+        <script type="text/javascript">
+            function validateDetails() {
+                var firstName = document.getElementById("firstName").value;
+                var middleName = document.getElementById("middleName").value;
+                var lastName = document.getElementById("lastName").value;
+                var phoneNumber = document.getElementById("phoneNumber").value;
+                var age = document.getElementById("age").value;
+                var city = document.getElementById("city").value;
+                var area = document.getElementById("area").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+                var carType = document.getElementById("carType").value;
+                var purposeFields = document.getElementsByName("purpose");
+                var purpose = "";
+                for (var i = 0; i < purposeFields.length; i++) {
+                    if (purposeFields[i].checked) {
+                        purpose += purposeFields[i].value + ", ";
+                    }
+                }
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                if (firstName === "" || middleName === "" || lastName === "" || phoneNumber === "" ||
+                    dob === "" || age === "" || city === "" || area === "" || email === "" || password === "" || carType === "" ||
+                    purpose === "") {
+                    alert("Please fill in all fields.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1 style="text-align: center; color: white;">CAR REGISTRATION FORM</h1>
+        <br><br>
+        <form style="text-align: center; color: white;" method="post" onsubmit="return validate()">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" pattern="[a-zA-Z]+" required>
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName" pattern="[a-zA-Z]+" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" pattern="[a-zA-Z]+" required><br><br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required oninvalid="this.setCustomValidity('Please enter a valid phone number (10 digits)')" 
+            oninput="this.setCustomValidity('')">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="100" required oninvalid="this.setCustomValidity('Please enter a valid age above 18 and below 100')" oninput="this.setCustomValidity('')"><br><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <label for="area">Area:</label>
+            <input type="text" id="area" name="area" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required oninvalid="this.setCustomValidity('Please enter a valid email id')" oninput="this.setCustomValidity('')">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+            <label for="carType">Car Type:</label>
+            <select id="carType" name="carType" required>
+            <option value="">Select Car Type</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="coupe">Coupe</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="convertible">Convertible</option>
+            <option value="pickup">Pickup</option>
+            <option value="van">Van</option>
+            </select><br><br>
+            <label>Purpose:</label><br>
+            <input type="checkbox" id="business" name="purpose" value="business">
+            <label for="business">Business</label>
+            <input type="checkbox" id="personal" name="purpose" value="personal">
+            <label for="personal">Personal</label>
+            <input type="checkbox" id="rental" name="purpose" value="rental">
+            <label for="rental">Rental</label>
+            <input type="checkbox" id="other" name="purpose" value="other">
+            <label for="other">Other</label><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
