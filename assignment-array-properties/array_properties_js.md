@@ -1,4 +1,4 @@
-#Array properties in JavaScript
+**Array properties in JavaScript**
 
 Arrays in javascript are used to store multiple values in a single variable. The various key properties of arrays in JavaScript:
 
