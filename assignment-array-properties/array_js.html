@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Array Properties</title>
+    <style>
+        span {
+            color: blueviolet;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Array Properties</h1>
+    <p>The array is: <span id="array"></span></p>
+    <p>The array has <span id="length"></span> elements.</p>
+    <p>The joined elements are: <span id="joined"></span></p>
+    <p>The last element removed is: <span id="popped"></span></p>
+    <p>The new element added is: <span id="pushed"></span></p>
+    <p>The first element removed is: <span id="shifted"></span></p>
+    <p>The new element added at start is: <span id="unshifted"></span></p>
+    <p>The slice is: <span id="sliced"></span></p>
+    <script>
+      // Create an array
+      let cars = ["nexon", "hexa", "santro", "swift"];
+      
+      // Display the array
+      let array = document.getElementById("array");
+      array.innerHTML = cars.toString();
+      
+      // Display the length of the array
+      let length = document.getElementById("length");
+      length.innerHTML = cars.length;
+      
+      // Display the joined elements of the array
+      let joined = document.getElementById("joined");
+      joined.innerHTML = cars.join(" - ");
+      
+      // Remove the last element of the array and display the new array
+      let popped = cars.pop();
+      let outputPopped = document.getElementById("popped");
+      outputPopped.innerHTML = popped;
+      
+      // Add a new element to the end of the array and display the new array
+      cars.push("safari");
+      let outputPushed = document.getElementById("pushed");
+      outputPushed.innerHTML = cars.toString();
+      
+      // Remove the first element of the array and display the new array
+      let shifted = cars.shift();
+      let outputShifted = document.getElementById("shifted");
+      outputShifted.innerHTML = shifted;
+      
+      // Add a new element to the beginning of the array and display the new array
+      cars.unshift("triber");
+      let outputUnshifted = document.getElementById("unshifted");
+      outputUnshifted.innerHTML = cars.toString();
+      
+      // Get a slice of the array and display the new array
+      let tata_cars = cars.slice(1, 2);
+      let outputSliced = document.getElementById("sliced");
+      outputSliced.innerHTML = tata_cars.toString();
+    </script>
+  </body>
+</html>
