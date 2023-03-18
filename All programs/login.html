@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<style>
+		body {
+			background-image: url('https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+			background-size: cover;
+			background-position: center;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.login-form {
+			align-items: center;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 5px;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+		}
+		label {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: #007bff;
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-align: center;
+			text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+		}
+		input[type="text"],
+		input[type="password"] {
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: #007bff;
+			color: white;
+			cursor: pointer;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			font-size: 16px;
+			transition: background-color 0.3s ease;
+			display: block;
+			margin: 0 auto;
+		}
+		input[type="submit"]:hover {
+			background-color: #0069d9;
+		}
+		.error {
+			color: red;
+			font-size: 12px;
+			margin-top: -10px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			var username = document.forms["loginForm"]["username"].value;
+			var password = document.forms["loginForm"]["password"].value;
+
+			var usernameRegex = /^[a-zA-Z0-9]+$/;
+			var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+			if (!usernameRegex.test(username)) {
+				document.getElementById("usernameError").innerHTML = "Username should contain only letters and numbers.";
+				return false;
+			} else {
+				document.getElementById("usernameError").innerHTML = "";
+			}
+
+			if (!passwordRegex.test(password)) {
+				document.getElementById("passwordError").innerHTML = "Password should be at least 8 characters long "+"<br>"+"and contain at least one letter and one number.";
+				return false;
+			} else {
+				document.getElementById("passwordError").innerHTML = "";
+			}
+
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1 style="color: white">Bank of Sharon - Login</h1>
+		<div class="login-form">
+			<form name="loginForm" action="account_creation.html" onsubmit="return validateForm()">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required><br>
+				<span class="error" id="usernameError"></span>
+		
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+				<br>
+				<span class="error" id="passwordError"></span>
+				<br>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

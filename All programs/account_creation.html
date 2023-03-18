@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Account Creation</title>
+	<style>
+		body {
+			background-image: url('https://images.pexels.com/photos/4968631/pexels-photo-4968631.jpeg');
+			background-size: cover;
+			background-position: center;
+			font-family: Arial, sans-serif;
+			background-color: #f7f7f7;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: white;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		input[type="text"],
+		input[type="password"],
+		input[type="file"] {
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			width: 100%;
+			font-size: 16px;
+			color: #4c4c4c;
+		}
+		input[type="file"] {
+			background-color: #f8f9fa;
+			color: #495057;
+		}
+		input[type="submit"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #007bff;
+			color: white;
+			cursor: pointer;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			font-size: 16px;
+			width: 100%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		input[type="submit"]:hover {
+			background-color: #0069d9;
+		}
+		label {
+			font-size: 16px;
+			color: #4c4c4c;
+			margin-bottom: 5px;
+		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: -10px;
+			margin-bottom: 10px;
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			var accountNumber = document.forms["accountCreationForm"]["accountNumber"].value;
+			var ifscCode = document.forms["accountCreationForm"]["ifscCode"].value;
+			var card = document.forms["accountCreationForm"]["card"].value;
+			var photo = document.forms["accountCreationForm"]["photo"].value;
+			var accountNumberRegex = /^[0-9]{9,18}$/;
+			var ifscCodeRegex = /^[A-Z]{4}[0][A-Z0-9]{6}$/;
+			var cardRegex = /\.(jpe?g|png|gif)$/i;
+			var photoRegex = /\.(jpe?g|png|gif)$/i;
+
+			if (!accountNumberRegex.test(accountNumber)) {
+				document.getElementById("accountNumberError").innerHTML = "Please enter a valid account number (between 9 and 18 digits)";
+				return false;
+			} else {
+				document.getElementById("accountNumberError").innerHTML = "";
+			}
+
+			if (!ifscCodeRegex.test(ifscCode)) {
+				document.getElementById("ifscCodeError").innerHTML = "Please enter a valid IFSC code (e.g. ABCD0123456)";
+				return false;
+			} else {
+				document.getElementById("ifscCodeError").innerHTML = "";
+			}
+
+			if (!cardRegex.test(card)) {
+			document.getElementById("cardError").innerHTML = "Please upload a valid card image (JPEG, PNG or GIF)";
+			return false;
+			} else {
+				document.getElementById("cardError").innerHTML = "";
+			}
+
+			if (!photoRegex.test(photo)) {
+				document.getElementById("photoError").innerHTML = "Please upload a valid photo (JPEG, PNG or GIF)";
+				return false;
+			} else {
+				document.getElementById("photoError").innerHTML = "";
+			}
+		return true;
+	}
+	</script>
+</head>
+<body>
+	<h1>Bank Account Creation - Bank of Sharon</h1>
+	<form name="accountCreationForm" action="#" onsubmit="return validateForm()">
+		<label for="accountNumber">Account Number:</label>
+		<input type="text" id="accountNumber" name="accountNumber" required>
+		<span class="error" id="accountNumberError"></span>
+		<label for="ifscCode">IFSC Code:</label>
+		<input type="text" id="ifscCode" name="ifscCode" required>
+		<span class="error" id="ifscCodeError"></span>
+	
+		<label for="card">KYC Card:</label>
+		<input type="file" id="card" name="card" accept=".jpg,.jpeg,.png,.gif" required>
+		<span class="error" id="cardError"></span>
+	
+		<label for="photo">Photo:</label>
+		<input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png,.gif" required>
+		<span class="error" id="photoError"></span>
+	
+		<input type="submit" value="Create Account">
+	</form>
+</body>
+</html>	
