@@ -29,6 +29,10 @@
 			margin-right: auto;
 		}
 		input[type="text"],
+		input[type="tel"],
+		input[type="email"],
+		input[type="number"],
+		#address,
 		input[type="password"],
 		input[type="file"] {
 			margin-bottom: 10px;
@@ -76,14 +80,60 @@
 	</style>
 	<script>
 		function validateForm() {
+			var name = document.forms["accountCreationForm"]["name"].value;
+			var age = document.forms["accountCreationForm"]["age"].value;
+			var email = document.forms["accountCreationForm"]["email"].value;
+			var phone = document.forms["accountCreationForm"]["phone"].value;
+			var address = document.forms["accountCreationForm"]["address"].value;
 			var accountNumber = document.forms["accountCreationForm"]["accountNumber"].value;
 			var ifscCode = document.forms["accountCreationForm"]["ifscCode"].value;
 			var card = document.forms["accountCreationForm"]["card"].value;
 			var photo = document.forms["accountCreationForm"]["photo"].value;
+			
+			var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+			var ageRegex = /^(1[89]|[2-9]\d)$/;
+			var emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+			var phoneRegex = /^\d{10}$/;
+			var addressRegex = /^[a-zA-Z0-9\s,'-]*$/;
 			var accountNumberRegex = /^[0-9]{9,18}$/;
 			var ifscCodeRegex = /^[A-Z]{4}[0][A-Z0-9]{6}$/;
 			var cardRegex = /\.(jpe?g|png|gif)$/i;
 			var photoRegex = /\.(jpe?g|png|gif)$/i;
+
+			if (!nameRegex.test(name)) {
+				document.getElementById("nameError").innerHTML = "Please enter a valid name";
+				return false;
+			} else {
+				document.getElementById("nameError").innerHTML = "";
+			}
+
+			if (!ageRegex.test(age)) {
+				document.getElementById("ageError").innerHTML = "Please enter a valid age (greater than 18)";
+				return false;
+			} else {
+				document.getElementById("ageError").innerHTML = "";
+			}
+
+			if (!emailRegex.test(email)) {
+				document.getElementById("emailError").innerHTML = "Please enter a valid email";
+				return false;
+			} else {
+				document.getElementById("emailError").innerHTML = "";
+			}
+
+			if (!phoneRegex.test(phone)) {
+				document.getElementById("phoneError").innerHTML = "Please enter a valid phone number";
+				return false;
+			} else {
+				document.getElementById("phoneError").innerHTML = "";
+			}
+
+			if (!addressRegex.test(address)) {
+				document.getElementById("addressError").innerHTML = "Please enter a valid address";
+				return false;
+			} else {
+				document.getElementById("addressError").innerHTML = "";
+			}
 
 			if (!accountNumberRegex.test(accountNumber)) {
 				document.getElementById("accountNumberError").innerHTML = "Please enter a valid account number (between 9 and 18 digits)";
@@ -119,6 +169,26 @@
 <body>
 	<h1>Bank Account Creation - Bank of Sharon</h1>
 	<form name="accountCreationForm" action="#" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+		<span class="error" id="nameError"></span>
+
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" required>
+		<span class="error" id="ageError"></span>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+		<span class="error" id="emailError"></span>
+
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" name="phone" required>
+		<span class="error" id="phoneError"></span>
+
+		<label for="address">Address:</label>
+		<textarea id="address" name="address" required></textarea>
+		<span class="error" id="addressError"></span>
+
 		<label for="accountNumber">Account Number:</label>
 		<input type="text" id="accountNumber" name="accountNumber" required>
 		<span class="error" id="accountNumberError"></span>
@@ -138,3 +208,4 @@
 	</form>
 </body>
 </html>	
+
