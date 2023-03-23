@@ -1,4 +1,5 @@
 <web-app>
+    <!--Experiment 5a-->
     <servlet>
         <servlet-name>Java-servlets</servlet-name>
         <servlet-class>Hello</servlet-class>
@@ -9,6 +10,36 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
-    
+    <!--Experiment 5b-->
+    <servlet>
+        <servlet-name>exp5b</servlet-name>
+        <servlet-class>exp5b1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>exp5b</servlet-name>
+        <url-pattern>/exp5b_url</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>exp5b2</servlet-name>
+        <servlet-class>exp5b2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>exp5b2</servlet-name>
+        <url-pattern>/exp5b2_url</url-pattern>
+    </servlet-mapping>
+
+    <!--Experiment 5b-->
+    <servlet>
+        <servlet-name>exp5c</servlet-name>
+        <servlet-class>exp5c</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>exp5c</servlet-name>
+        <url-pattern>/exp5c_url</url-pattern>
+    </servlet-mapping>
   
 </web-app>
