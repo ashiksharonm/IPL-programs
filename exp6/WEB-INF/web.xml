@@ -1,0 +1,53 @@
+<web-app>
+    <servlet>
+        <servlet-name>db-connect</servlet-name>
+        <servlet-class>create</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>db-connect</servlet-name>
+        <url-pattern>/db1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>db-connect2</servlet-name>
+        <servlet-class>display</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>db-connect2</servlet-name>
+        <url-pattern>/db2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>db-connect3</servlet-name>
+        <servlet-class>update</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>db-connect3</servlet-name>
+        <url-pattern>/db3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>db-connect4</servlet-name>
+        <servlet-class>delete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>db-connect4</servlet-name>
+        <url-pattern>/db4</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>db-connect5</servlet-name>
+        <servlet-class>search</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>db-connect5</servlet-name>
+        <url-pattern>/db5</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
