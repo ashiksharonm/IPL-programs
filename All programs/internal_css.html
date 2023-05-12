@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf=8">
-    <title>INTERNAL CSS</title>
+    <title>Car Data</title>
     <style>
-        h1 {
-            color: darkslategrey
-        }
-        
-        p {
+        body {
             font-family: Arial, Helvetica, sans-serif;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(184, 11, 195, 1) 0%, rgba(0, 212, 255, 1) 100%);
         }
-        
-        h3 {
-            color: chocolate;
+
+        h1 {
+            color: white;
+            text-align: center;
         }
-        
-        .special {
-            font-size: 20pt;
-            background-color: lightsteelblue;
+
+        .car-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .car1 {
+            background-color: #f9f9f9;
+            color: purple;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .car2 {
+            background-color: #f9f9f9;
+            color: blue;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-info {
+            margin-bottom: 5px;
+        }
+
+        .car-info-label {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <h1>INTERNAL CSS</h1>
-    <p>This is a paragraph with font family in Arial, Helvetica, sans-serif. </p>
-    <h3>This is chocolate background color</h3>
-    <p class="special">This is a sentence with font size 20 and background color is light steel blue</p>
-    <a href="main.html"><h2 style="text-align: center;">go to main</h2></a>
+    <h1>Car Data</h1>
+    <div class="car-container">
+        <div class="car1">
+            <h2 class="car-name">Toyota Camry</h2>
+            <p class="car-info">
+                <span class="car-info-label">Manufacturer:</span> Toyota
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Model:</span> Camry
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Year:</span> 2022
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Color:</span> Silver
+            </p>
+        </div>
+
+        <div class="car2">
+            <h2 class="car-name">Honda Civic</h2>
+            <p class="car-info">
+                <span class="car-info-label">Manufacturer:</span> Honda
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Model:</span> Civic
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Year:</span> 2023
+            </p>
+            <p class="car-info">
+                <span class="car-info-label">Color:</span> Red
+            </p>
+        </div>
+    </div>
 </body>
 </html>
