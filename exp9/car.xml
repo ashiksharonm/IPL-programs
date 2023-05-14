@@ -1,0 +1,72 @@
+<carlist>
+    <car>
+        <carname>Tata Tiago.ev</carname>
+        <type>hatchback</type>
+        <year>2023</year>
+        <price>900000</price>
+        <transmission>Automatic</transmission>
+    </car>
+    <car>
+        <carname>Nissan Magnite</carname>
+        <type>SUV</type>
+        <year>2020</year>
+        <price>1000000</price>
+        <transmission>Petrol</transmission>
+    </car>
+    <car>
+        <carname>Renault Triber</carname>
+        <type>MUV</type>
+        <year>2021</year>
+        <price>754000</price>
+        <transmission>Petrol</transmission>
+    </car>
+    <car>
+        <carname>Toyota Hycross</carname>
+        <type>MUV</type>
+        <year>2023</year>
+        <price>3000000</price>
+        <transmission>Automatic</transmission>
+    </car>
+    <car>
+        <carname>Mahindra Scorpio</carname>
+        <type>MUV</type>
+        <year>2022</year>
+        <price>1700000</price>
+        <transmission>Diesel</transmission>
+    </car>
+    <car>
+        <carname>Mahindra Thar</carname>
+        <type>MUV</type>
+        <year>2019</year>
+        <price>1300000</price>
+        <transmission>Automatic</transmission>
+    </car>
+    <car>
+        <carname>Maruti Ertiga</carname>
+        <type>SUV</type>
+        <year>2021</year>
+        <price>900000</price>
+        <transmission>Petrol</transmission>
+    </car>
+    <car>
+        <carname>Tata Tiago</carname>
+        <type>hatchback</type>
+        <year>2020</year>
+        <price>430000</price>
+        <transmission>Petrol</transmission>
+    </car>
+    <car>
+        <carname>Kia Seltos</carname>
+        <type>SUV</type>
+        <year>2020</year>
+        <price>1450000</price>
+        <transmission>Automatic</transmission>
+    </car>
+    <car>
+        <carname>Tata Safari</carname>
+        <type>MUV</type>
+        <year>2023</year>
+        <price>1900000</price>
+        <transmission>Diesel</transmission>
+    </car>
+</carlist>
